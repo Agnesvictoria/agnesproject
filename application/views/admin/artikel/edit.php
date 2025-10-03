@@ -3,10 +3,10 @@
 
 <?php echo form_open('admin/artikel/update/'.$artikel->id); ?>
 
-<label>Title</label><br>
+<label>Judul</label><br>
 <input type="text" name="title" value="<?php echo set_value('title', $artikel->title); ?>" required><br><br>
 
-<label>Content</label><br>
+<label>Isi Artikel</label><br>
 <textarea name="content" rows="5" required><?php echo set_value('content', $artikel->content); ?></textarea><br><br>
 
 <label>Author</label><br>
@@ -19,7 +19,7 @@
     <?php endforeach; ?>
 </select><br><br>
 
-<label>Category</label><br>
+<label>Kategori</label><br>
 <select name="category_id" required>
     <?php foreach($categories as $category): ?>
         <option value="<?php echo $category->id; ?>" 
@@ -29,7 +29,7 @@
     <?php endforeach; ?>
 </select><br><br>
 
-<label>Tags</label><br>
+<label>Tag</label><br>
 <?php foreach($tags as $tag): ?>
     <input type="checkbox" name="tags[]" value="<?php echo $tag->id; ?>"
         <?php echo in_array($tag->id, $artikel_tags) ? 'checked' : ''; ?>>
